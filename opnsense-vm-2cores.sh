@@ -226,7 +226,7 @@ function default_settings() {
   HN="opnsense"
   CPU_TYPE=""
   CORE_COUNT="2"
-  RAM_SIZE="2048"
+  RAM_SIZE="4096"
   BRG="vmbr0"
   IP_ADDR=""
   WAN_IP_ADDR=""
@@ -634,7 +634,7 @@ sleep 10
 send_line_to_vm "sh ./opnsense-bootstrap.sh.in -y -f -r 25.1"
 msg_ok "OPNsense VM is being installed, do not close the terminal, or the installation will fail."
 #We need to wait for the OPNsense build proccess to finish, this takes a few minutes
-sleep 50000
+sleep 5000
 send_line_to_vm "root"
 send_line_to_vm "opnsense"
 send_line_to_vm "2"
@@ -666,7 +666,7 @@ else
   send_line_to_vm "n"
 fi
 #we need to wait for the Config changes to be saved
-sleep 1000
+sleep 100
 if [ "$WAN_IP_ADDR" != "" ]; then
   send_line_to_vm "2"
   send_line_to_vm "2"
@@ -682,7 +682,7 @@ if [ "$WAN_IP_ADDR" != "" ]; then
   send_line_to_vm "n"
   send_line_to_vm "n"
 fi
-sleep 500
+sleep 50
 send_line_to_vm "0"
 msg_ok "Started OPNsense VM"
 
