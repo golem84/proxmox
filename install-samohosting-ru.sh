@@ -9,8 +9,8 @@ source <(curl -s https://raw.githubusercontent.com/samohosting-ru/samohosting-sc
 # App Default Values
 APP="start-samohosting"
 var_tags="start-samohosting"
-var_cpu="4"
-var_ram="8192"
+var_cpu="2"
+var_ram="4096"
 var_disk="15"
 var_os="debian"
 var_version="12"
